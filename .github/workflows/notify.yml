@@ -1,7 +1,11 @@
 name: Telegram Notify
 
 on:
+  # 保留手動測試按鈕，方便隨時補測
   workflow_dispatch:
+  # 設定每天定時自動執行（使用 UTC 時間，UTC 13:15 = 台灣時間 21:15）
+  schedule:
+    - cron: "15 13 * * *"
 
 jobs:
   send-message:
